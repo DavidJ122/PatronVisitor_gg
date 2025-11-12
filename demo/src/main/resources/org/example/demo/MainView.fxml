@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="org.example.demo.Controller.MainController">
+
+    <left>
+        <VBox spacing="10" BorderPane.alignment="CENTER_LEFT" style="-fx-background-color:#f7fafc;">
+            <padding><Insets top="12" right="12" bottom="12" left="12"/></padding>
+
+            <Label text="Figuras (Elementos del 'Objeto Estructurado')" style="-fx-font-weight:bold;"/>
+            <ListView fx:id="listViewShapes" prefWidth="320" prefHeight="300"/>
+
+            <HBox spacing="8">
+                <Button text="Calcular Área" onAction="#onCalcularArea"/>
+                <Button text="Perímetro" onAction="#onCalcularPerimetro"/>
+            </HBox>
+
+            <HBox spacing="8">
+                <Button text="Dibujar" onAction="#onDibujar"/>
+                <Button text="Limpiar" onAction="#onLimpiar"/>
+            </HBox>
+
+            <Label fx:id="lblResultado" wrapText="true"/>
+        </VBox>
+    </left>
+
+    <center>
+        <StackPane style="-fx-background-color:white;" BorderPane.alignment="CENTER">
+            <Pane fx:id="canvasPane" prefWidth="560" prefHeight="480"
+                  style="-fx-border-color:#CBD5E0; -fx-border-width:2; -fx-background-color:#ffffff;"/>
+        </StackPane>
+    </center>
+</BorderPane>
